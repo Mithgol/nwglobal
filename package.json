@@ -1,0 +1,13 @@
+{
+"name": "nwglobal",
+"main": "index.js",
+"version": "0.0.1",
+"description": "Node.js globals for node-webkit's HTML5",
+"keywords": ["node-webkit"],
+"author": { "name": "Mithgol the Webmaster" },
+"repository": {
+   "type": "git",
+   "url": "https://github.com/Mithgol/nwglobal.git"
+},
+"bugs": { "url" : "https://github.com/Mithgol/nwglobal/issues" }
+}
