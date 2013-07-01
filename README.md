@@ -1,8 +1,8 @@
-This Node.js module provides a�workaround for [node-webkit](https://github.com/rogerwang/node-webkit/)'s issues [#702](https://github.com/rogerwang/node-webkit/issues/702), [#716](https://github.com/rogerwang/node-webkit/issues/716), [#832](https://github.com/rogerwang/node-webkit/issues/832).
+This Node.js module provides a workaround for [node-webkit](https://github.com/rogerwang/node-webkit/)'s issues [#702](https://github.com/rogerwang/node-webkit/issues/702), [#716](https://github.com/rogerwang/node-webkit/issues/716), [#832](https://github.com/rogerwang/node-webkit/issues/832).
 
-These issues happen in node-webkit because, as the�modules run in�Node�context, the�constructors of�their global objects (such�as `Date` or `ArrayBuffer` or�even `Array`) differ from�WebKit's.
+These issues happen in node-webkit because, as the modules run in Node context, the constructors of their global objects (such as `Date` or `ArrayBuffer` or even `Array`) differ from WebKit's.
 
-(For example, you�may�pass an�array to�the [async](https://github.com/caolan/async/) module that you have previously `require`d, but the�module cannot recognize�that.)
+(For example, you may pass an array to the [async](https://github.com/caolan/async/) module that you have previously `require`d, but the module cannot recognize that.)
 
 # Installation
 
@@ -32,7 +32,7 @@ require('async').waterfall([
 });
 ```
 
-does not report `'done'` in�node-webkit, but can�be�fixed with�the�following changes:
+does not report `'done'` in node-webkit, but can be fixed with the following changes:
 
 ```js
 require('async').waterfall( require('nwglobal').Array(
@@ -51,6 +51,10 @@ require('async').waterfall( require('nwglobal').Array(
    console.log(result);
 });
 ```
+
+# Limits
+
+It is not (yet?) possible to replace constructors of elementary `{}` and `[]` values, [see the discussion](https://github.com/rogerwang/node-webkit/issues/832#issuecomment-20297959) for details and a corresponding example.
 
 # License
 
