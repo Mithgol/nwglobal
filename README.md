@@ -6,7 +6,9 @@ These issues happen in node-webkit because, as the modules run in Node context, 
 
 # Installation
 
-`npm install https://github.com/Mithgol/nwglobal/tarball/master`
+* Latest packaged version: `npm install nwglobal`
+
+* Latest githubbed version: `npm install https://github.com/Mithgol/nwglobal/tarball/master`
 
 # Example
 
