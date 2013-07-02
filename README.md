@@ -2,7 +2,7 @@ This Node.js module (`nwglobal`) provides a workaround for [node-webkit](https:
 
 These issues happen in node-webkit because, as the modules run in Node context, the constructors of their global objects (such as `Date` or `ArrayBuffer` or even `Array`) differ from WebKit's.
 
-(For example, you may pass an array from some `<script>…</script>` to the [async](https://github.com/caolan/async/) module that you have previously `require`d, but that module cannot recognize such an array.)
+(An example below demonstrates that you may pass an array from some `<script>…</script>` to the [async](https://github.com/caolan/async/) module that you have previously `require`d, but that module cannot recognize such an array.)
 
 To prevent the trouble, `nwglobal` exports Node's constructors. You may use them instead of the constructors available in WebKit's context, and then you may pass the resulting object instances to any Node code.
 
@@ -12,9 +12,7 @@ To prevent the trouble, `nwglobal` exports Node's constructors. You may use t
 
 * Latest githubbed version: `npm install https://github.com/Mithgol/nwglobal/tarball/master`
 
-You may visit https://github.com/Mithgol/nwglobal#readme occasionally to read the latest `README`.
-
-The package's version is not planned to grow after changes when they happen in `README` only. (However, `npm publish --force` may happen eventually.)
+You may visit https://github.com/Mithgol/nwglobal#readme occasionally to read the latest `README` because the package's version is not planned to grow after changes when they happen in `README` only. (However, `npm publish --force` may happen eventually.)
 
 # Example
 
