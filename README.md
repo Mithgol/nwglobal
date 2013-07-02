@@ -1,8 +1,10 @@
-This Node.js module provides a workaround for [node-webkit](https://github.com/rogerwang/node-webkit/)'s issues [#702](https://github.com/rogerwang/node-webkit/issues/702), [#716](https://github.com/rogerwang/node-webkit/issues/716), [#832](https://github.com/rogerwang/node-webkit/issues/832).
+This Node.js module (`nwglobal`) provides a workaround for [node-webkit](https://github.com/rogerwang/node-webkit/)'s issues [#702](https://github.com/rogerwang/node-webkit/issues/702), [#716](https://github.com/rogerwang/node-webkit/issues/716), [#832](https://github.com/rogerwang/node-webkit/issues/832).
 
 These issues happen in node-webkit because, as the modules run in Node context, the constructors of their global objects (such as `Date` or `ArrayBuffer` or even `Array`) differ from WebKit's.
 
-(For example, you may pass an array to the [async](https://github.com/caolan/async/) module that you have previously `require`d, but the module cannot recognize that.)
+(For example, you may pass an array from some `<script>…</script>` to the [async](https://github.com/caolan/async/) module that you have previously `require`d, but that module cannot recognize such an array.)
+
+To prevent the trouble, `nwglobal` exports Node's constructors. You may use them instead of the constructors available in WebKit's context, and then you may pass the resulting object instances to any Node code.
 
 # Installation
 
@@ -32,7 +34,7 @@ require('async').waterfall([
 });
 ```
 
-does not report `'done'` in node-webkit, but can be fixed with the following changes:
+does not report `'done'` in node-webkit ([issue #832](https://github.com/rogerwang/node-webkit/issues/832)), but can be fixed with the following changes:
 
 ```js
 require('async').waterfall( require('nwglobal').Array(
@@ -51,6 +53,30 @@ require('async').waterfall( require('nwglobal').Array(
    console.log(result);
 });
 ```
+
+# Implementation details
+
+The following Node.js globals are available as the exported fields of `require('nwglobal')`:
+
+* **Standard object types:** `Array`, `Boolean`, `Date`, `Function`, `Number`, `Object`, `RegExp`, `String`.
+
+* **Typed array types:** `ArrayBuffer`, `DataView`, `Float32Array`, `Float64Array`, `Int16Array`, `Int32Array`, `Int8Array`, `Uint16Array`, `Uint32Array`, `Uint8Array`.
+
+* **Error types:** `Error`, `EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError`, `URIError`.
+
+* **Special value types:** `Infinity`, `NaN`, `undefined`, `null`.
+
+However, the latter four (`Infinity`, `NaN`, `undefined`, `null`) are actually superglobal (i.e. they are the same in Node's and WebKit's contexts). You may use `nwglobal` to check it with the following four statements in node-webkit's “Developer Tools” console:
+
+* `null === require('nwglobal').null`
+
+* `typeof require('nwglobal').undefined === 'undefined'`
+
+* `Infinity === require('nwglobal').Infinity`
+
+* `isNaN( require('nwglobal').NaN )`
+
+These statements are `true`.
 
 # Limits
 
