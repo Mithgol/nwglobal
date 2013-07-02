@@ -12,6 +12,10 @@ To prevent the trouble, `nwglobal` exports Node's constructors. You may use t
 
 * Latest githubbed version: `npm install https://github.com/Mithgol/nwglobal/tarball/master`
 
+You may visit https://github.com/Mithgol/nwglobal#readme occasionally to read the latest `README`.
+
+The package's version is not planned to grow after changes when they happen in `README` only. (However, `npm publish --force` may happen eventually.)
+
 # Example
 
 Classic async [waterfall example:](https://github.com/caolan/async/blob/b6a1336bcb0865d6d26224f9553b9e1886fe696e/README.md#waterfall)
@@ -76,7 +80,7 @@ However, the latter four (`Infinity`, `NaN`, `undefined`, `null`) are actually s
 
 * `isNaN( require('nwglobal').NaN )`
 
-These statements are `true`.
+These statements are `true`. (Meaning that you won't need these four exported values IRL.)
 
 # Limits
 
