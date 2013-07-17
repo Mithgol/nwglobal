@@ -1,4 +1,4 @@
-![(npm package version)](https://badge.fury.io/js/nwglobal.png)
+[![(npm package version)](https://badge.fury.io/js/nwglobal.png)](https://npmjs.org/package/nwglobal)
 
 This Node.js module (`nwglobal`) provides a workaround for [node-webkit](https://github.com/rogerwang/node-webkit/)'s issues [#702](https://github.com/rogerwang/node-webkit/issues/702), [#716](https://github.com/rogerwang/node-webkit/issues/716), [#832](https://github.com/rogerwang/node-webkit/issues/832).
 
