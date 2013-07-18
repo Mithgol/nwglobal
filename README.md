@@ -84,7 +84,11 @@ These statements are `true`. (Meaning that you won't need these four exported va
 
 # Limits
 
-It is not (yet?) possible to replace constructors of elementary `{}` and `[]` values, [see the discussion](https://github.com/rogerwang/node-webkit/issues/832#issuecomment-20297959) for details and a corresponding example.
+It is not possible to replace the default constructors of arrays and objects created by `[]` and `{}` initialisers.
+
+([Standard ECMA-262 5.1 Edition](http://www.ecma-international.org/ecma-262/5.1/) very specifically defines [array initialiser](http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.4) and [object initialiser](http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5) so that the corresponding **standard built-in constructor** is used for each.)
+
+Therefore you have to use `Array()` and `Object()` constructors exported by `require('nwglobal')` in order to create arrays and objects in Node's context.
 
 # License
 
