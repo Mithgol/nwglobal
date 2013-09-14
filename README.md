@@ -58,6 +58,8 @@ require('async').waterfall( require('nwglobal').Array(
 });
 ```
 
+You may find another example in “[Differences of JavaScript contexts](https://github.com/rogerwang/node-webkit/wiki/Differences-of-JavaScript-contexts)”.
+
 # Implementation details
 
 The following Node.js globals are available as the exported fields of `require('nwglobal')`:
