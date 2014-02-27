@@ -14,7 +14,7 @@ To prevent the trouble, `nwglobal` exports Node's constructors. You may use t
 
 * Latest githubbed version: `npm install https://github.com/Mithgol/nwglobal/tarball/master`
 
-You may visit https://github.com/Mithgol/nwglobal#readme occasionally to read the latest `README` because the package's version is not planned to grow after changes when they happen in `README` only. (However, `npm publish --force` may happen eventually.)
+You may visit https://github.com/Mithgol/nwglobal#readme occasionally to read the latest `README` because the package's version is not planned to grow after changes when they happen in `README` only. (And `npm publish --force` is [forbidden](http://blog.npmjs.org/post/77758351673/no-more-npm-publish-f) nowadays.)
 
 # Example
 
