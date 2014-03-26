@@ -1,5 +1,3 @@
-[![(npm package version)](https://badge.fury.io/js/nwglobal.png)](https://npmjs.org/package/nwglobal)
-
 This Node.js module (`nwglobal`) provides a workaround for [node-webkit](https://github.com/rogerwang/node-webkit/)'s issues [#702](https://github.com/rogerwang/node-webkit/issues/702), [#716](https://github.com/rogerwang/node-webkit/issues/716), [#832](https://github.com/rogerwang/node-webkit/issues/832).
 
 These issues happen in node-webkit because, as the modules run in Node context, the constructors of their global objects (such as `Date` or `ArrayBuffer` or even `Array`) differ from WebKit's.
@@ -9,6 +7,8 @@ These issues happen in node-webkit because, as the modules run in Node contex
 To prevent the trouble, `nwglobal` exports Node's constructors. You may use them instead of the constructors available in WebKit's context, and then you may pass the resulting object instances to any Node code.
 
 # Installation
+
+[![(npm package version)](https://nodei.co/npm/nwglobal.png?compact=true)](https://npmjs.org/package/nwglobal)
 
 * Latest packaged version: `npm install nwglobal`
 
