@@ -92,6 +92,10 @@ It is not possible to replace the default constructors of arrays and objects 
 
 Therefore you have to use `Array()` and `Object()` constructors exported by `require('nwglobal')` in order to create arrays and objects in Node's context.
 
+NB: you can cast browser's `[]` array to node.js array with `require('nwglobal').Array.prototype.slice.call(browserContextArray)`.
+
+NB2: With this you can transform jquery set.
+
 # License
 
 MIT License, see the LICENSE file.
