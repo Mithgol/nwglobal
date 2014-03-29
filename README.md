@@ -58,6 +58,8 @@ require('async').waterfall( require('nwglobal').Array(
 });
 ```
 
+The aforementioned problem was also fixed in async module version 0.3.0 (and newer versions) after its own source code [was changed](https://github.com/caolan/async/commit/9f57a352bbaba436db11f8885e460eaa81d97b75) to take a possible difference of JavaScript contexts into account.
+
 You may find another example in “[Differences of JavaScript contexts](https://github.com/rogerwang/node-webkit/wiki/Differences-of-JavaScript-contexts)”.
 
 # Implementation details
