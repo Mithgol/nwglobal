@@ -8,7 +8,7 @@ To prevent the trouble, `nwglobal` exports Node's constructors. You may use t
 
 # Installation
 
-[![(npm package version)](https://nodei.co/npm/nwglobal.png?compact=true)](https://npmjs.org/package/nwglobal)
+[![(npm package version)](https://nodei.co/npm/nwglobal.png?compact=true)](https://npmjs.org/package/nwglobal) [![(a histogram of downloads)](https://nodei.co/npm-dl/nwglobal.png?months=3)](https://npmjs.org/package/nwglobal)
 
 * Latest packaged version: `npm install nwglobal`
 
